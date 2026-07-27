@@ -26,7 +26,7 @@ export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }
               {drink.price}
             </span>
           </div>
-          <p className="product-text mt-3 text-sm text-muted-foreground">{drink.description}</p>
+          <p className="product-text mt-3 text-[0.9375rem] text-foreground/70">{drink.description}</p>
 
         </div>
       </div>
