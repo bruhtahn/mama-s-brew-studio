@@ -13,7 +13,7 @@ export function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-dvh overflow-hidden bg-espresso">
-      <motion.div style={{ y }} className="absolute inset-0 -z-10">
+      <motion.div style={{ y }} className="absolute inset-0 z-0">
         <img
           src={hero}
           alt="Бариста готовит латте за стойкой кофейни «Мама варит кофе»"
@@ -26,7 +26,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-espresso/75 via-espresso/45 to-espresso/90" />
       </motion.div>
 
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-1/3 -z-0">
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-1/3 z-10">
         <span className="steam left-[18%] h-24 w-10" style={{ animationDelay: "0s" }} />
         <span className="steam left-[24%] h-28 w-8" style={{ animationDelay: "1.8s" }} />
         <span className="steam left-[30%] h-20 w-9" style={{ animationDelay: "3.4s" }} />
@@ -34,7 +34,7 @@ export function Hero() {
 
       <motion.div
         style={{ opacity: fade }}
-        className="container-x relative flex min-h-dvh flex-col justify-end pb-16 pt-36 sm:pb-24"
+        className="container-x relative z-20 flex min-h-dvh flex-col justify-end pb-16 pt-36 sm:pb-24"
       >
         <div className="max-w-3xl">
           <motion.span
