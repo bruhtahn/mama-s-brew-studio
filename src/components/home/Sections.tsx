@@ -139,7 +139,7 @@ export function DrinkOfMonth() {
               <h2 className="mt-5 text-4xl font-extrabold leading-[1.02] sm:text-5xl">
                 Кленовый латте со специями
               </h2>
-              <p className="mt-5 text-base leading-relaxed text-cream/65">
+              <p className="product-text mt-5 text-base text-cream/65">
                 Канадский кленовый сироп, палочка корицы и бадьян настаиваются в молоке восемь
                 часов. Сверху — двойной эспрессо и облако взбитых сливок с щепоткой мускатного
                 ореха. Осенний напиток, который согревает с первого глотка.
