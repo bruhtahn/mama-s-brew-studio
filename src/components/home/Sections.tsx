@@ -34,10 +34,10 @@ export function FeaturedCoffee() {
           <Reveal delay={0.12} className="h-full">
             <Link
               to="/menu"
-              className="group flex h-full min-h-56 flex-col justify-between rounded-3xl border border-dashed border-primary/40 bg-primary/5 p-6 transition-colors hover:bg-primary/10"
+              className="group flex h-full min-h-56 flex-col rounded-3xl border border-dashed border-primary/40 bg-primary/5 p-6 transition-colors hover:bg-primary/10"
             >
               <span className="eyebrow">Меню целиком</span>
-              <span className="mt-8 flex items-end justify-between gap-4">
+              <span className="mt-auto flex items-end justify-between gap-4 pt-10">
                 <span className="font-display text-2xl font-extrabold leading-tight">
                   Ещё 20+ позиций в меню
                 </span>
