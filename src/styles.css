@@ -187,6 +187,22 @@
   color: var(--color-primary);
 }
 
+/* Editorial ExtraThin styles for product / menu typography */
+@utility product-title {
+  font-family: var(--font-thin);
+  font-weight: 100;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+}
+
+@utility product-text {
+  font-family: var(--font-thin);
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  line-height: 1.65;
+}
+
+
 @utility rule-line {
   height: 1px;
   width: 100%;
