@@ -21,12 +21,13 @@ export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }
         </div>
         <div className="flex flex-1 flex-col p-6">
           <div className="flex items-start justify-between gap-4">
-            <h3 className="font-display text-xl font-bold">{drink.title}</h3>
+            <h3 className="product-title text-xl">{drink.title}</h3>
             <span className="shrink-0 font-display text-lg font-extrabold text-primary">
               {drink.price}
             </span>
           </div>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{drink.description}</p>
+          <p className="product-text mt-3 text-sm text-muted-foreground">{drink.description}</p>
+
         </div>
       </div>
     </Reveal>
