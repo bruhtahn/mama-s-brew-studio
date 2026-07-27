@@ -4,6 +4,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Custom brand typeface — Halvar Breitschrift (self-hosted via CDN assets) */
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/__l5e/assets-v1/ce3be9a2-7a97-4a3c-be42-eafa50605cbb/halvar-regular.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift Thin";
+  src: url("/__l5e/assets-v1/651de010-79f4-4d57-a39b-d55d0ec516fd/halvar-extrathin.woff2") format("woff2");
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /*
  * "Мама варит кофе" — design system.
  * Warm, editorial, light interface. Red (#E5140B) is an accent only.
