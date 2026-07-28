@@ -21,6 +21,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Halvar Breitschrift Black";
+  src: url("./assets/fonts/Halvar-Breitschrift-Black-Demo.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /*
  * "Мама варит кофе" — design system.
@@ -39,6 +47,7 @@
   --font-display: "Halvar Breitschrift", "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Halvar Breitschrift", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-thin: "Halvar Breitschrift Thin", "Halvar Breitschrift", "Inter", ui-sans-serif, sans-serif;
+  --font-coffee: "Halvar Breitschrift Black", "Halvar Breitschrift Black", sans-serif;
 
 
   --color-background: var(--background);

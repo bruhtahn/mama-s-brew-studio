@@ -27,7 +27,33 @@ export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }
             </span>
           </div>
           <p className="product-text mt-3 text-[0.9375rem] text-foreground/70">{drink.description}</p>
+{drink.ingredients && (
+  <div className="mt-5">
+    <h4 className="text-sm font-light">
+      Состав:
+    </h4>
 
+    <p className="mt-2 text-sm text-foreground/70">
+      {drink.ingredients.join(", ")}
+    </p>
+  </div>
+)}
+
+
+{drink.nutrition && (
+  <div className="mt-4 rounded-2xl bg-muted/50 p-4">
+    <h4 className="text-sm font-semibold">
+      БЖУ:
+    </h4>
+
+    <div className="mt-2 grid grid-cols-2 gap-2 text-sm text-foreground/70">
+      <span>🔥 {drink.nutrition.calories}</span>
+      <span>Белки: {drink.nutrition.protein}</span>
+      <span>Жиры: {drink.nutrition.fat}</span>
+      <span>Углеводы: {drink.nutrition.carbs}</span>
+    </div>
+  </div>
+)}
         </div>
       </div>
     </Reveal>
