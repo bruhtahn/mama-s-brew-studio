@@ -4,6 +4,7 @@ import { Menu, X, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NAV, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.svg";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,12 +42,11 @@ export function Header() {
               solid ? "text-foreground" : "text-white",
             )}
           >
-            <span
-              aria-hidden
-              className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary text-sm font-extrabold text-primary-foreground"
-            >
-              М
-            </span>
+            <img
+            src={logo}
+            alt="Мама варит кофе"
+            className="h-10 w-auto shrink-0"
+           />
             <span className="truncate font-display text-[15px] font-extrabold leading-tight tracking-tight sm:text-base">
               Мама варит кофе
             </span>
