@@ -66,21 +66,26 @@ function GalleryPage() {
 
       <section className="bg-background py-14 sm:py-20">
         <div className="container-x">
-          <div className="flex flex-wrap gap-2">
+          <div
+            role="tablist"
+            aria-label="Категории галереи"
+            className="-mx-5 flex gap-x-2 overflow-x-auto border-b border-border px-5 md:mx-0 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {galleryFilters.map((f) => (
               <button
                 key={f.id}
+                role="tab"
                 type="button"
-                aria-pressed={filter === f.id}
+                aria-selected={filter === f.id}
                 onClick={() => {
                   setFilter(f.id);
                   setOpenIndex(null);
                 }}
                 className={cn(
-                  "rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300",
+                  "-mb-px shrink-0 cursor-pointer whitespace-nowrap rounded-t-lg border-b-2 px-5 py-3.5 text-base tracking-wide transition-colors duration-300",
                   filter === f.id
-                    ? "bg-primary text-primary-foreground shadow-[var(--shadow-glow)]"
-                    : "border border-border bg-card text-muted-foreground hover:border-primary/50 hover:text-foreground",
+                    ? "border-primary bg-primary/5 text-foreground"
+                    : "border-transparent text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
                 {f.label}

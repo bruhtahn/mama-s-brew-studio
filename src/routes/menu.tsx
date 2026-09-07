@@ -31,8 +31,7 @@ function MenuPage() {
 
   return (
     <>
-      {/* Минималистичная шапка страницы: белый фон, без декоративных элементов */}
-      <section className="bg-white pt-32 pb-12 sm:pt-40 sm:pb-16">
+      <section className="border-b border-border bg-cream pt-32 pb-12 sm:pt-40 sm:pb-16">
         <div className="container-x">
           <Reveal>
             <span className="eyebrow">
@@ -41,12 +40,12 @@ function MenuPage() {
             </span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="product-title mt-5 max-w-3xl text-5xl sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-3xl text-5xl font-extrabold leading-[0.98] sm:text-6xl lg:text-7xl">
               Всё, что мы варим и печём
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="product-text mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Цены указаны за стандартную порцию. Растительное молоко — без доплаты, зерно на
               альтернативу меняем каждые две недели.
             </p>
@@ -54,7 +53,7 @@ function MenuPage() {
         </div>
       </section>
 
-      <section className="bg-white pb-20 sm:pb-28">
+      <section className="bg-background py-14 sm:py-20">
         <div className="container-x">
           {/* Категории: текстовые табы с тонкой линией, активная — красная */}
           <div
@@ -83,8 +82,8 @@ function MenuPage() {
 
           <div className="mt-12 sm:mt-16">
             <Reveal key={category.id}>
-              <h2 className="product-title text-3xl sm:text-4xl">{category.title}</h2>
-              <p className="product-text mt-3 text-muted-foreground">{category.subtitle}</p>
+              <h2 className="text-3xl font-extrabold leading-[1.05] sm:text-4xl">{category.title}</h2>
+              <p className="mt-3 leading-relaxed text-muted-foreground">{category.subtitle}</p>
             </Reveal>
 
             {/* Сетка: 1 колонка на мобильных, 2 на планшетах, 3 на десктопе */}

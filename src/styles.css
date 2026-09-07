@@ -63,7 +63,7 @@
 
 @font-face {
   font-family: "Halvar Breitschrift";
-  src: url("/Halvar-Breitschrift-ExtraBold-Demo.woff2") format("woff2");
+  src: url("/Halvar-Breitschrift-Bold-Demo.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -71,7 +71,7 @@
 
 @font-face {
   font-family: "Halvar Breitschrift";
-  src: url("/Halvar-Breitschrift-Black-Demo.woff2") format("woff2");
+  src: url("/Halvar-Breitschrift-ExtraBold-Demo.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
