@@ -7,7 +7,7 @@
 /* Custom brand typeface — Halvar Breitschrift (self-hosted via CDN assets) */
 @font-face {
   font-family: "Halvar Breitschrift";
-  src: url("/__l5e/assets-v1/ce3be9a2-7a97-4a3c-be42-eafa50605cbb/halvar-regular.woff2") format("woff2");
+  src: url("/Halvar-Breitschrift-Regular-Demo.woff2") format("woff2");
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "Halvar Breitschrift Thin";
-  src: url("/__l5e/assets-v1/651de010-79f4-4d57-a39b-d55d0ec516fd/halvar-extrathin.woff2") format("woff2");
+  src: url("/Halvar-Breitschrift-ExtraThin-Demo.woff2") format("woff2");
   font-weight: 100 300;
   font-style: normal;
   font-display: swap;
@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: "Halvar Breitschrift Black";
-  src: url("./assets/fonts/Halvar-Breitschrift-Black-Demo.woff2") format("woff2");
+  src: url("/Halvar-Breitschrift-Black-Demo.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
