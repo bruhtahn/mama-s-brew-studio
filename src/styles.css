@@ -7,24 +7,72 @@
 /* Custom brand typeface — Halvar Breitschrift (self-hosted via CDN assets) */
 @font-face {
   font-family: "Halvar Breitschrift";
-  src: url("/Halvar-Breitschrift-Regular-Demo.woff2") format("woff2");
-  font-weight: 300 900;
+  src: url("/Halvar-Breitschrift-Hairline-Demo.woff2") format("woff2");
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Halvar Breitschrift Thin";
+  font-family: "Halvar Breitschrift";
   src: url("/Halvar-Breitschrift-ExtraThin-Demo.woff2") format("woff2");
-  font-weight: 100 300;
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Halvar Breitschrift Black";
-  src: url("/Halvar-Breitschrift-Black-Demo.woff2") format("woff2");
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-Thin-Demo.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-Light-Demo.woff2") format("woff2");
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-Regular-Demo.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-Medium-Demo.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-Bold-Demo.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-ExtraBold-Demo.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breitschrift";
+  src: url("/Halvar-Breitschrift-Black-Demo.woff2") format("woff2");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
