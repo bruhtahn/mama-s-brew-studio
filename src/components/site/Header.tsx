@@ -4,6 +4,7 @@ import { Menu, X, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NAV, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.svg";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,12 +42,11 @@ export function Header() {
               solid ? "text-foreground" : "text-white",
             )}
           >
-            <span
-              aria-hidden
-              className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary text-sm font-extrabold text-primary-foreground"
-            >
-              М
-            </span>
+            <img
+            src={logo}
+            alt="Мама варит кофе"
+            className="h-10 w-auto shrink-0"
+           />
             <span className="truncate font-display text-[15px] font-extrabold leading-tight tracking-tight sm:text-base">
               Мама варит кофе
             </span>
@@ -77,10 +77,13 @@ export function Header() {
           <div className="hidden justify-end lg:flex">
             <a
               href={SITE.phoneHref}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+              className={cn(
+                "inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-300",
+                overHero ? "text-white hover:text-white/80" : "text-primary hover:text-primary/80",
+              )}
             >
-              <Phone className="h-4 w-4" aria-hidden />
-              {SITE.phone}
+              <Phone className={cn("h-4 w-4", overHero ? "text-white" : "text-primary")} aria-hidden />
+              <span className={cn(overHero ? "text-white" : "text-primary")}>{SITE.phone}</span>
             </a>
           </div>
 
@@ -122,10 +125,13 @@ export function Header() {
               ))}
               <a
                 href={SITE.phoneHref}
-                className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+                className={cn(
+                  "mt-3 inline-flex items-center justify-center gap-2 text-sm font-semibold",
+                  overHero ? "text-white" : "text-primary",
+                )}
               >
-                <Phone className="h-4 w-4" aria-hidden />
-                {SITE.phone}
+                <Phone className={cn("h-4 w-4", overHero ? "text-white" : "text-primary")} aria-hidden />
+                <span className={cn(overHero ? "text-white" : "text-primary")}>{SITE.phone}</span>
               </a>
             </nav>
           </motion.div>

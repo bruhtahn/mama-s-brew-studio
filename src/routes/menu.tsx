@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHero } from "@/components/site/PageHero";
-import { DrinkCard } from "@/components/site/DrinkCard";
+import { MenuItemTile } from "@/components/site/MenuItemTile";
 import { Reveal } from "@/components/site/Reveal";
 import { CtaSection } from "@/components/site/CtaSection";
 import { menuCategories } from "@/lib/menu-data";
@@ -32,18 +31,36 @@ function MenuPage() {
 
   return (
     <>
-      <PageHero
-        eyebrow="Меню"
-        title="Всё, что мы варим и печём"
-        description="Цены указаны за стандартную порцию. Растительное молоко — без доплаты, зерно на альтернативу меняем каждые две недели."
-      />
-
-      <section className="bg-background py-14 sm:py-20">
+      {/* Минималистичная шапка страницы: белый фон, без декоративных элементов */}
+      <section className="bg-white pt-32 pb-12 sm:pt-40 sm:pb-16">
         <div className="container-x">
+          <Reveal>
+            <span className="eyebrow">
+              <span aria-hidden className="inline-block h-px w-6 bg-primary" />
+              Меню
+            </span>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <h1 className="product-title mt-5 max-w-3xl text-5xl sm:text-6xl lg:text-7xl">
+              Всё, что мы варим и печём
+            </h1>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p className="product-text mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
+              Цены указаны за стандартную порцию. Растительное молоко — без доплаты, зерно на
+              альтернативу меняем каждые две недели.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-white pb-20 sm:pb-28">
+        <div className="container-x">
+          {/* Категории: текстовые табы с тонкой линией, активная — красная */}
           <div
             role="tablist"
             aria-label="Категории меню"
-            className="flex flex-wrap gap-2 border-b border-border pb-6"
+            className="-mx-5 flex gap-x-2 overflow-x-auto border-b border-border px-5 md:mx-0 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {menuCategories.map((c) => (
               <button
@@ -53,10 +70,10 @@ function MenuPage() {
                 aria-selected={active === c.id}
                 onClick={() => setActive(c.id)}
                 className={cn(
-                  "rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300",
+                  "-mb-px shrink-0 cursor-pointer whitespace-nowrap rounded-t-lg border-b-2 px-5 py-3.5 text-base tracking-wide transition-colors duration-300",
                   active === c.id
-                    ? "bg-primary text-primary-foreground shadow-[var(--shadow-glow)]"
-                    : "border border-border bg-card text-muted-foreground hover:border-primary/50 hover:text-foreground",
+                    ? "border-primary bg-primary/5 text-foreground"
+                    : "border-transparent text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
                 {c.title}
@@ -64,14 +81,20 @@ function MenuPage() {
             ))}
           </div>
 
-          <div className="mt-10">
+          <div className="mt-12 sm:mt-16">
             <Reveal key={category.id}>
-              <h2 className="font-display text-3xl font-extrabold sm:text-4xl">{category.title}</h2>
-              <p className="mt-3 text-muted-foreground">{category.subtitle}</p>
+              <h2 className="product-title text-3xl sm:text-4xl">{category.title}</h2>
+              <p className="product-text mt-3 text-muted-foreground">{category.subtitle}</p>
             </Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+            {/* Сетка: 1 колонка на мобильных, 2 на планшетах, 3 на десктопе */}
+            <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-16">
               {category.items.map((drink, i) => (
-                <DrinkCard key={`${category.id}-${drink.id}`} drink={drink} delay={(i % 4) * 0.06} />
+                <MenuItemTile
+                  key={`${category.id}-${drink.id}`}
+                  drink={drink}
+                  delay={(i % 3) * 0.06}
+                />
               ))}
             </div>
           </div>

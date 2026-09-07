@@ -10,14 +10,20 @@ import tea from "@/assets/tea.jpg";
 import dessert1 from "@/assets/dessert-1.jpg";
 import dessert2 from "@/assets/dessert-2.jpg";
 import drinkOfMonth from "@/assets/drink-of-month.jpg";
+import { nutritionData, type Nutrition, type NutritionKey } from "./nutrition-data";
+
+export type { Nutrition } from "./nutrition-data";
+export { formatNutritionSummary, formatNutritionValue } from "./nutrition-data";
 
 export type Drink = {
-  id: string;
+  id: NutritionKey;
   title: string;
   description: string;
   size: string;
   price: string;
   image: string;
+  /** Состав и КБЖУ на порцию. Значения редактируются в `nutrition-data.ts`. */
+  nutrition: Nutrition;
 };
 
 export const featured: Drink[] = [
@@ -25,9 +31,10 @@ export const featured: Drink[] = [
     id: "espresso",
     title: "Эспрессо",
     description: "Плотный шот с ореховой сладостью и долгим карамельным послевкусием.",
-    size: "30 мл",
-    price: "180 ₽",
+    size: "60 мл",
+    price: "210 ₽",
     image: espresso,
+    nutrition: nutritionData.espresso,
   },
   {
     id: "americano",
@@ -36,6 +43,7 @@ export const featured: Drink[] = [
     size: "250 мл",
     price: "200 ₽",
     image: americano,
+    nutrition: nutritionData.americano,
   },
   {
     id: "cappuccino",
@@ -44,6 +52,7 @@ export const featured: Drink[] = [
     size: "250 мл",
     price: "280 ₽",
     image: cappuccino,
+    nutrition: nutritionData.cappuccino,
   },
   {
     id: "latte",
@@ -52,6 +61,7 @@ export const featured: Drink[] = [
     size: "350 мл",
     price: "300 ₽",
     image: latte,
+    nutrition: nutritionData.latte,
   },
   {
     id: "flat-white",
@@ -60,6 +70,7 @@ export const featured: Drink[] = [
     size: "200 мл",
     price: "310 ₽",
     image: flatwhite,
+    nutrition: nutritionData["flat-white"],
   },
   {
     id: "raf",
@@ -68,6 +79,7 @@ export const featured: Drink[] = [
     size: "300 мл",
     price: "340 ₽",
     image: raf,
+    nutrition: nutritionData.raf,
   },
   {
     id: "filter",
@@ -76,6 +88,7 @@ export const featured: Drink[] = [
     size: "300 мл",
     price: "290 ₽",
     image: filter,
+    nutrition: nutritionData.filter,
   },
 ];
 
@@ -105,6 +118,7 @@ export const menuCategories: MenuCategory[] = [
         size: "350 мл",
         price: "390 ₽",
         image: drinkOfMonth,
+        nutrition: nutritionData.maple,
       },
       {
         id: "honey-raf",
@@ -113,6 +127,7 @@ export const menuCategories: MenuCategory[] = [
         size: "300 мл",
         price: "380 ₽",
         image: raf,
+        nutrition: nutritionData["honey-raf"],
       },
       {
         id: "orange-espresso",
@@ -121,6 +136,7 @@ export const menuCategories: MenuCategory[] = [
         size: "300 мл",
         price: "360 ₽",
         image: cold,
+        nutrition: nutritionData["orange-espresso"],
       },
       {
         id: "cocoa",
@@ -129,6 +145,7 @@ export const menuCategories: MenuCategory[] = [
         size: "300 мл",
         price: "320 ₽",
         image: latte,
+        nutrition: nutritionData.cocoa,
       },
     ],
   },
@@ -144,6 +161,7 @@ export const menuCategories: MenuCategory[] = [
         size: "400 мл",
         price: "330 ₽",
         image: cold,
+        nutrition: nutritionData["iced-latte"],
       },
       {
         id: "cold-brew",
@@ -152,6 +170,7 @@ export const menuCategories: MenuCategory[] = [
         size: "350 мл",
         price: "350 ₽",
         image: americano,
+        nutrition: nutritionData["cold-brew"],
       },
       {
         id: "bumble",
@@ -160,6 +179,7 @@ export const menuCategories: MenuCategory[] = [
         size: "400 мл",
         price: "370 ₽",
         image: filter,
+        nutrition: nutritionData.bumble,
       },
       {
         id: "iced-flat",
@@ -168,6 +188,7 @@ export const menuCategories: MenuCategory[] = [
         size: "300 мл",
         price: "340 ₽",
         image: flatwhite,
+        nutrition: nutritionData["iced-flat"],
       },
     ],
   },
@@ -183,6 +204,7 @@ export const menuCategories: MenuCategory[] = [
         size: "450 мл",
         price: "320 ₽",
         image: tea,
+        nutrition: nutritionData["sea-buckthorn"],
       },
       {
         id: "jasmine",
@@ -191,6 +213,7 @@ export const menuCategories: MenuCategory[] = [
         size: "450 мл",
         price: "280 ₽",
         image: tea,
+        nutrition: nutritionData.jasmine,
       },
       {
         id: "herbal",
@@ -199,6 +222,7 @@ export const menuCategories: MenuCategory[] = [
         size: "450 мл",
         price: "300 ₽",
         image: tea,
+        nutrition: nutritionData.herbal,
       },
     ],
   },
@@ -214,6 +238,7 @@ export const menuCategories: MenuCategory[] = [
         size: "140 г",
         price: "420 ₽",
         image: dessert1,
+        nutrition: nutritionData.cheesecake,
       },
       {
         id: "croissant",
@@ -222,6 +247,7 @@ export const menuCategories: MenuCategory[] = [
         size: "90 г",
         price: "230 ₽",
         image: dessert2,
+        nutrition: nutritionData.croissant,
       },
       {
         id: "medovik",
@@ -230,6 +256,7 @@ export const menuCategories: MenuCategory[] = [
         size: "150 г",
         price: "390 ₽",
         image: dessert1,
+        nutrition: nutritionData.medovik,
       },
       {
         id: "cinnamon",
@@ -238,6 +265,7 @@ export const menuCategories: MenuCategory[] = [
         size: "120 г",
         price: "290 ₽",
         image: dessert2,
+        nutrition: nutritionData.cinnamon,
       },
     ],
   },

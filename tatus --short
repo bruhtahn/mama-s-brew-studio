@@ -1,0 +1,12 @@
+warning: in the working copy of 'src/components/site/DrinkCard.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/lib/menu-data.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/routeTree.gen.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/routes/menu.tsx', LF will be replaced by CRLF the next time Git touches it
+ package.json                      |   2 [32m+[m[31m-[m
+ src/components/site/DrinkCard.tsx |   7 [32m++[m[31m-[m
+ src/components/site/Header.tsx    |  30 [32m++++++[m[31m----[m
+ src/lib/menu-data.ts              |  34 [32m++++++++++[m[31m-[m
+ src/routeTree.gen.ts              | 118 [32m+++++++++++++++++++++[m[31m-----------------[m
+ src/routes/menu.tsx               |  57 [32m++++++++++++[m[31m------[m
+ src/styles.css                    |  22 [32m+++++++[m
+ 7 files changed, 180 insertions(+), 90 deletions(-)
