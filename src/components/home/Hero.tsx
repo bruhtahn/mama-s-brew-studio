@@ -51,7 +51,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 text-[3.25rem] font-extrabold leading-[0.92] text-cream sm:text-7xl lg:text-8xl"
+            className="mt-6 text-[3.25rem] font-extrabold uppercase leading-[0.92] text-cream sm:text-7xl lg:text-8xl"
           >
             Мама варит кофе
           </motion.h1>

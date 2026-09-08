@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Send, MapPin, Phone, Clock, Globe } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
+import logo from "@/assets/logo.svg";
 
 export function Footer() {
   return (
@@ -9,13 +10,20 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span
+              <img
+                src={logo}
+                alt=""
                 aria-hidden
-                className="grid h-10 w-10 place-items-center rounded-xl bg-primary text-base font-extrabold text-primary-foreground"
-              >
-                М
+                className="h-10 w-auto shrink-0"
+              />
+              <span className="flex min-w-0 flex-col leading-none">
+                <span className="font-display text-xl font-extrabold uppercase">
+                  Мама варит кофе
+                </span>
+                <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.32em] text-cream/55">
+                  Третье место
+                </span>
               </span>
-              <span className="font-display text-xl font-extrabold">Мама варит кофе</span>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/60">
               {SITE.tagline} Спешелти-зерно, свежая обжарка и тёплый зал на Покровке.

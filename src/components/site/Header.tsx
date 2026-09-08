@@ -43,12 +43,17 @@ export function Header() {
             )}
           >
             <img
-            src={logo}
-            alt="Мама варит кофе"
-            className="h-10 w-auto shrink-0"
-           />
-            <span className="truncate font-display text-[15px] font-extrabold leading-tight tracking-tight sm:text-base">
-              Мама варит кофе
+              src={logo}
+              alt="Мама варит кофе"
+              className="h-10 w-auto shrink-0"
+            />
+            <span className="flex min-w-0 flex-col justify-center leading-none">
+              <span className="truncate font-display text-[15px] font-extrabold uppercase leading-tight tracking-tight sm:text-base">
+                Мама варит кофе
+              </span>
+              <span className="mt-1 text-[9px] font-bold uppercase tracking-[0.32em] opacity-60">
+                Третье место
+              </span>
             </span>
           </Link>
 

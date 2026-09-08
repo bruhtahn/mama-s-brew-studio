@@ -1,5 +1,5 @@
 import { Reveal } from "./Reveal";
-import { formatNutritionSummary, type Drink } from "@/lib/menu-data";
+import { formatNutritionSummary, formatPreviewPrice, type Drink } from "@/lib/menu-data";
 
 export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }) {
   return (
@@ -15,15 +15,17 @@ export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }
             height={1000}
             className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
           />
-          <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur">
-            {drink.size}
-          </span>
+          {drink.size ? (
+            <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur">
+              {drink.size}
+            </span>
+          ) : null}
         </div>
         <div className="flex flex-1 flex-col p-6">
           <div className="flex items-start justify-between gap-4">
             <h3 className="product-title text-xl">{drink.title}</h3>
-            <span className="shrink-0 font-display text-lg font-extrabold text-primary">
-              {drink.price}
+            <span className="shrink-0 whitespace-nowrap font-display text-lg font-extrabold text-primary">
+              {formatPreviewPrice(drink.price)}
             </span>
           </div>
           <p className="product-text mt-3 text-[0.9375rem] text-foreground/70">

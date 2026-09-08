@@ -13,6 +13,24 @@ export type Drink = {
   nutrition: Nutrition;
 };
 
+/**
+ * Цена для превью-карточек: «210/250/295 ₽» → «от 210 ₽».
+ * Если цена одна (или все варианты стоят одинаково, «210/210 ₽») — просто «210 ₽».
+ */
+export function formatPreviewPrice(price: string): string {
+  const values = price
+    .split("/")
+    .map((part) => Number.parseInt(part, 10))
+    .filter((value) => Number.isFinite(value));
+
+  if (values.length === 0) return price;
+
+  const min = Math.min(...values);
+  const suffix = price.includes("₽") ? " ₽" : "";
+
+  return min === Math.max(...values) ? `${min}${suffix}` : `от ${min}${suffix}`;
+}
+
 const images = import.meta.glob("../assets/menu-source/*.webp", {
   eager: true,
   import: "default",
@@ -1004,4 +1022,27 @@ export const menuCategories: MenuCategory[] = [
   },
 ];
 
-export const featured = menuCategories[0].items.slice(0, 7);
+/**
+ * Превью на главной: понемногу из каждой категории —
+ * от классики и альтернативы до чая, еды, десертов и снеков.
+ * 11 карточек + плитка «Меню целиком» = 12 тайлов (ровно по сеткам 4/3/2).
+ */
+export const featured: Drink[] = [
+  source_09, // капучино — черный кофе
+  food_01, // сэндвич с курицей — еда
+  source_31, // матча латте — матча / какао
+  food_08, // круассан классический — десерты
+  source_15, // эспрессо тоник — холодный кофе
+  source_51, // облепиховый чай — чай / лимонад
+  source_25, // фраппе капучино — фраппе
+  food_31, // миндаль жареный — снеки
+  source_04, // V60 — черный кофе (альтернатива)
+  source_19, // латте халва — кофе микс
+  source_58, // глинтвейн — авторские напитки
+];
+
+/** Всего позиций в меню (для счётчика «Ещё N+ позиций» на главной). */
+export const totalMenuItems = menuCategories.reduce(
+  (sum, category) => sum + category.items.length,
+  0,
+);

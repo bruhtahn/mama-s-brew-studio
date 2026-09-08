@@ -13,19 +13,22 @@ import {
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { DrinkCard } from "@/components/site/DrinkCard";
-import { featured } from "@/lib/menu-data";
+import { featured, totalMenuItems } from "@/lib/menu-data";
 import { galleryItems } from "@/lib/gallery-data";
 import drinkOfMonth from "@/assets/drink-of-month.webp";
 import barista1 from "@/assets/barista-1.webp";
+
+/** Остаток позиций меню, округлённый до десятков — для плитки «Меню целиком». */
+const moreInMenu = Math.floor((totalMenuItems - featured.length) / 10) * 10;
 
 export function FeaturedCoffee() {
   return (
     <section className="bg-background py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Наш кофе"
-          title="Семь способов начать день"
-          description="Готовим на зерне собственной обжарки. Каждый напиток настроен под конкретный рецепт — от плотного эспрессо до чайного фильтра."
+          eyebrow="Наше меню"
+          title="Выбор гостей"
+          description="Понемногу из каждого раздела: классический капучино и альтернатива на V60, матча-латте, облепиховый чай, сэндвичи, свежая выпечка и снеки."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {featured.map((drink, i) => (
@@ -39,7 +42,7 @@ export function FeaturedCoffee() {
               <span className="eyebrow">Меню целиком</span>
               <span className="mt-auto flex items-end justify-between gap-4 pt-10">
                 <span className="font-display text-2xl font-extrabold leading-tight">
-                  Ещё 20+ позиций в меню
+                  Ещё {moreInMenu}+ позиций в меню
                 </span>
                 <ArrowUpRight
                   className="h-6 w-6 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
