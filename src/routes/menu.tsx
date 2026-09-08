@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MenuItemTile } from "@/components/site/MenuItemTile";
 import { Reveal } from "@/components/site/Reveal";
 import { CtaSection } from "@/components/site/CtaSection";
@@ -11,6 +11,9 @@ const description =
   "Кофе, авторские напитки, холодный кофе, чай и десерты в кофейне «Мама варит кофе» на Покровке, 8.";
 
 export const Route = createFileRoute("/menu")({
+  validateSearch: (search: Record<string, unknown>): { category?: string } => ({
+    category: typeof search.category === "string" ? search.category : undefined,
+  }),
   head: () => ({
     meta: [
       { title },
@@ -26,8 +29,23 @@ export const Route = createFileRoute("/menu")({
 });
 
 function MenuPage() {
-  const [active, setActive] = useState(menuCategories[0].id);
+  const { category: requestedCategory } = Route.useSearch();
+  const catalogRef = useRef<HTMLElement>(null);
+
+  const [active, setActive] = useState(() => {
+    const requested = menuCategories.find((c) => c.id === requestedCategory);
+    return requested?.id ?? menuCategories[0].id;
+  });
   const category = menuCategories.find((c) => c.id === active) ?? menuCategories[0];
+
+  // Переход по ссылке с ?category=... — открываем нужную категорию и подматываем к каталогу
+  useEffect(() => {
+    if (!requestedCategory) return;
+    const requested = menuCategories.find((c) => c.id === requestedCategory);
+    if (!requested) return;
+    setActive(requested.id);
+    catalogRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [requestedCategory]);
 
   return (
     <>
@@ -53,7 +71,7 @@ function MenuPage() {
         </div>
       </section>
 
-      <section className="bg-background py-14 sm:py-20">
+      <section ref={catalogRef} className="scroll-mt-24 bg-background py-14 sm:py-20">
         <div className="container-x">
           {/* Категории: отдельные кнопки, которые аккуратно переносятся на две строки */}
           <div

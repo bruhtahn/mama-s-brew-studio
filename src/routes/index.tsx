@@ -4,7 +4,7 @@ import {
   FeaturedCoffee,
   WhyUs,
   DrinkOfMonth,
-  BaristaPick,
+  FoodPromo,
   GalleryPreview,
   Testimonials,
 } from "@/components/home/Sections";
@@ -36,7 +36,7 @@ function Index() {
       <FeaturedCoffee />
       <WhyUs />
       <DrinkOfMonth />
-      <BaristaPick />
+      <FoodPromo />
       <GalleryPreview />
       <Testimonials />
       <CtaSection />

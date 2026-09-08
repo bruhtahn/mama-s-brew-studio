@@ -9,6 +9,10 @@ import {
   Star,
   ArrowUpRight,
   Quote,
+  Clock,
+  Percent,
+  Sandwich,
+  CakeSlice,
 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -16,7 +20,7 @@ import { DrinkCard } from "@/components/site/DrinkCard";
 import { featured, totalMenuItems } from "@/lib/menu-data";
 import { galleryItems } from "@/lib/gallery-data";
 import drinkOfMonth from "@/assets/drink-of-month.webp";
-import barista1 from "@/assets/barista-1.webp";
+import promoFood from "@/assets/dessert-1.webp";
 
 /** Остаток позиций меню, округлённый до десятков — для плитки «Меню целиком». */
 const moreInMenu = Math.floor((totalMenuItems - featured.length) / 10) * 10;
@@ -169,7 +173,22 @@ export function DrinkOfMonth() {
   );
 }
 
-export function BaristaPick() {
+const promoConditions = [
+  {
+    icon: Clock,
+    text: "Ежедневно с 21:00 — за два часа до закрытия",
+  },
+  {
+    icon: Sandwich,
+    text: "Сэндвичи, рапы и роллы",
+  },
+  {
+    icon: CakeSlice,
+    text: "Десерты и снеки собственного производства",
+  },
+];
+
+export function FoodPromo() {
   return (
     <section className="bg-cream py-20 sm:py-28">
       <div className="container-x">
@@ -177,36 +196,52 @@ export function BaristaPick() {
           <Reveal>
             <div className="relative">
               <img
-                src={barista1}
-                alt="Бариста Артём у кофемашины"
+                src={promoFood}
+                alt="Десерты и выпечка собственного производства"
                 loading="lazy"
                 decoding="async"
-                width={800}
-                height={1100}
-                className="w-full rounded-[2rem] object-cover shadow-[var(--shadow-lift)]"
+                className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[var(--shadow-lift)]"
               />
               <span className="absolute -bottom-5 left-6 rounded-2xl bg-primary px-5 py-3 font-display text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)]">
-                Артём · шеф-бариста
+                −30% на всю еду
               </span>
             </div>
           </Reveal>
           <div>
             <SectionHeading
-              eyebrow="Выбор бариста"
-              title="Эфиопия Иргачеффе на фильтре"
-              description="«Это зерно я советую тем, кто думает, что не любит кофе. В чашке — жасмин, персик и чёрный чай, почти нет горечи. Завариваю на V60 при 93 °C, помол чуть крупнее соли: так вкус раскрывается медленно и держится до последнего глотка.»"
+              eyebrow="Акция"
+              title={
+                <>
+                  <span className="text-[1.15em] text-primary">Скидка 30%</span> на всю еду за два
+                  часа до закрытия
+                </>
+              }
+              description="Каждый день с 21:00 все сэндвичи, рапы, десерты и снеки можно забрать со скидкой 30% — вместо того чтобы отправить их наутро в мусорку. Заходите на поздний ужин или берите что-нибудь сладкое с собой."
             />
             <Reveal delay={0.15}>
-              <div className="mt-9 flex flex-wrap gap-3">
-                {["Жасмин", "Персик", "Чёрный чай", "V60", "93 °C"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-muted-foreground"
-                  >
-                    {tag}
-                  </span>
+              <ul className="mt-9 flex flex-col gap-4">
+                {promoConditions.map((item) => (
+                  <li key={item.text} className="flex items-center gap-4">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+                      <item.icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    <span className="text-sm font-semibold text-foreground">{item.text}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <Link
+                to="/menu"
+                search={{ category: "food" }}
+                className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                Выбрать что-нибудь вкусное
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden
+                />
+              </Link>
             </Reveal>
           </div>
         </div>
