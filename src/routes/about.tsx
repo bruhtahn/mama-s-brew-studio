@@ -4,11 +4,11 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaSection } from "@/components/site/CtaSection";
-import interior1 from "@/assets/interior-1.jpg";
-import interior2 from "@/assets/interior-2.jpg";
-import barista1 from "@/assets/barista-1.jpg";
-import barista2 from "@/assets/barista-2.jpg";
-import beans from "@/assets/beans.jpg";
+import interior1 from "@/assets/interior-1.webp";
+import interior2 from "@/assets/interior-2.webp";
+import barista1 from "@/assets/barista-1.webp";
+import barista2 from "@/assets/barista-2.webp";
+import beans from "@/assets/beans.webp";
 
 const title = "О нас — Мама варит кофе";
 const description =

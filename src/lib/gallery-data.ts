@@ -1,15 +1,15 @@
-import interior1 from "@/assets/interior-1.jpg";
-import interior2 from "@/assets/interior-2.jpg";
-import barista1 from "@/assets/barista-1.jpg";
-import barista2 from "@/assets/barista-2.jpg";
-import dessert1 from "@/assets/dessert-1.jpg";
-import dessert2 from "@/assets/dessert-2.jpg";
-import atmosphere from "@/assets/atmosphere.jpg";
-import beans from "@/assets/beans.jpg";
-import cappuccino from "@/assets/cappuccino.jpg";
-import filter from "@/assets/filter.jpg";
-import drinkOfMonth from "@/assets/drink-of-month.jpg";
-import hero from "@/assets/hero.jpg";
+import interior1 from "@/assets/interior-1.webp";
+import interior2 from "@/assets/interior-2.webp";
+import barista1 from "@/assets/barista-1.webp";
+import barista2 from "@/assets/barista-2.webp";
+import dessert1 from "@/assets/dessert-1.webp";
+import dessert2 from "@/assets/dessert-2.webp";
+import atmosphere from "@/assets/atmosphere.webp";
+import beans from "@/assets/beans.webp";
+import cappuccino from "@/assets/cappuccino.webp";
+import filter from "@/assets/filter.webp";
+import drinkOfMonth from "@/assets/drink-of-month.webp";
+import hero from "@/assets/hero.webp";
 
 export type GalleryCategory = "interior" | "coffee" | "desserts" | "baristas" | "atmosphere";
 

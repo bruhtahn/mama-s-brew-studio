@@ -15,8 +15,8 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { DrinkCard } from "@/components/site/DrinkCard";
 import { featured } from "@/lib/menu-data";
 import { galleryItems } from "@/lib/gallery-data";
-import drinkOfMonth from "@/assets/drink-of-month.jpg";
-import barista1 from "@/assets/barista-1.jpg";
+import drinkOfMonth from "@/assets/drink-of-month.webp";
+import barista1 from "@/assets/barista-1.webp";
 
 export function FeaturedCoffee() {
   return (

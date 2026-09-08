@@ -55,11 +55,11 @@ function MenuPage() {
 
       <section className="bg-background py-14 sm:py-20">
         <div className="container-x">
-          {/* Категории: текстовые табы с тонкой линией, активная — красная */}
+          {/* Категории: отдельные кнопки, которые аккуратно переносятся на две строки */}
           <div
             role="tablist"
             aria-label="Категории меню"
-            className="-mx-5 flex gap-x-2 overflow-x-auto border-b border-border px-5 md:mx-0 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="-mx-5 flex gap-2 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {menuCategories.map((c) => (
               <button
@@ -69,10 +69,10 @@ function MenuPage() {
                 aria-selected={active === c.id}
                 onClick={() => setActive(c.id)}
                 className={cn(
-                  "-mb-px shrink-0 cursor-pointer whitespace-nowrap rounded-t-lg border-b-2 px-5 py-3.5 text-base tracking-wide transition-colors duration-300",
+                  "shrink-0 cursor-pointer whitespace-nowrap rounded-md border px-5 py-3.5 text-base tracking-wide transition-colors duration-300",
                   active === c.id
                     ? "border-primary bg-primary/5 text-foreground"
-                    : "border-transparent text-muted-foreground hover:bg-muted hover:text-foreground",
+                    : "border-border text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
                 {c.title}
@@ -82,7 +82,9 @@ function MenuPage() {
 
           <div className="mt-12 sm:mt-16">
             <Reveal key={category.id}>
-              <h2 className="text-3xl font-extrabold leading-[1.05] sm:text-4xl">{category.title}</h2>
+              <h2 className="text-3xl font-extrabold leading-[1.05] sm:text-4xl">
+                {category.title}
+              </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">{category.subtitle}</p>
             </Reveal>
 

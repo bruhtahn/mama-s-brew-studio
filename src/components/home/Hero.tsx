@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, MapPin, Clock } from "lucide-react";
 import { useRef } from "react";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.webp";
 import { SITE } from "@/lib/site";
 
 export function Hero() {
