@@ -1,21 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin, Clock } from "lucide-react";
-import hero from "@/assets/official/about-4.jpg";
+import hero from "@/assets/official/hero-counter.jpg";
 import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
     <section className="relative min-h-dvh overflow-hidden bg-espresso">
-      <div className="absolute inset-x-0 bottom-0 top-20 z-0">
+      <div className="absolute inset-0 z-0">
         <img
           src={hero}
-          alt="Диван, растение и красная LED-строка в интерьере кофейни"
+          alt="Бариста и гости у кофейной стойки «Мама варит кофе»"
           width={1680}
           height={1120}
           fetchPriority="high"
           decoding="async"
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-cover object-[50%_70%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-espresso/75 via-espresso/45 to-espresso/90" />
       </div>
