@@ -35,8 +35,8 @@ export function MenuItemTile({ drink, delay = 0 }: { drink: Drink; delay?: numbe
         />
       </div>
 
-      {/* Название: крупный тонкий шрифт */}
-      <h3 className="product-title mt-6 text-xl !font-[500] uppercase text-foreground sm:text-[1.5rem]">
+      {/* Название: начертание Medium */}
+      <h3 className="product-title mt-6 text-xl uppercase text-foreground sm:text-[1.5rem]">
         {drink.title}
       </h3>
 

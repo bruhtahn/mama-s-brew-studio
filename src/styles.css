@@ -246,8 +246,8 @@
 
 /* Editorial ExtraThin styles for product / menu typography */
 @utility product-title {
-  font-family: var(--font-thin);
-  font-weight: 100;
+  font-family: var(--font-display);
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.18;
 }

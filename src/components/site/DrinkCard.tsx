@@ -5,7 +5,7 @@ export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }
   return (
     <Reveal as="article" delay={delay} className="group h-full">
       <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]">
-        <div className="relative aspect-4/5 overflow-hidden bg-muted">
+        <div className="relative aspect-square sm:aspect-4/5 overflow-hidden bg-muted">
           <img
             src={drink.image}
             alt={drink.title}
@@ -21,14 +21,14 @@ export function DrinkCard({ drink, delay = 0 }: { drink: Drink; delay?: number }
             </span>
           ) : null}
         </div>
-        <div className="flex flex-1 flex-col p-6">
-          <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-1 flex-col p-5 sm:p-6">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:justify-between sm:gap-4">
             <h3 className="product-title text-xl">{drink.title}</h3>
             <span className="shrink-0 whitespace-nowrap font-display text-lg font-extrabold text-primary">
               {formatPreviewPrice(drink.price)}
             </span>
           </div>
-          <p className="product-text mt-3 text-[0.9375rem] text-foreground/70">
+          <p className="product-text-md mt-3 text-[0.9375rem] text-foreground/80">
             {drink.description}
           </p>
         </div>

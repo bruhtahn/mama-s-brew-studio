@@ -32,7 +32,13 @@ export function FeaturedCoffee() {
           title="С чего начнём?"
           description="Понемногу из каждого раздела: классический капучино и альтернатива на V60, матча-латте, облепиховый чай, сэндвичи, свежая выпечка и снеки."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <p className="mt-6 text-sm text-muted-foreground sm:hidden">Листайте, чтобы выбрать →</p>
+        <div
+          role="region"
+          aria-label="Позиции меню — горизонтальная прокрутка на мобильных"
+          tabIndex={0}
+          className="-mx-5 mt-5 grid auto-cols-[min(82vw,20rem)] grid-flow-col gap-4 overflow-x-auto overscroll-x-contain snap-x snap-mandatory scroll-px-5 px-5 pb-5 [&>*]:min-w-0 [&>*]:snap-start focus-visible:outline-2 focus-visible:outline-primary sm:mx-0 sm:mt-14 sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 xl:grid-cols-4"
+        >
           {featured.map((drink, i) => (
             <DrinkCard key={drink.id} drink={drink} delay={(i % 4) * 0.06} />
           ))}
@@ -54,6 +60,9 @@ export function FeaturedCoffee() {
             </Link>
           </Reveal>
         </div>
+        <Link to="/menu" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary sm:hidden">
+          Открыть полное меню <ArrowUpRight className="h-4 w-4" aria-hidden />
+        </Link>
       </div>
     </section>
   );
