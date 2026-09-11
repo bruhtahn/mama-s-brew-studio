@@ -1,3 +1,4 @@
+import { PhotoReplacementBadge } from "@/components/site/PhotoReplacementBadge";
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -61,7 +62,7 @@ function GalleryPage() {
       <PageHero
         eyebrow="Галерея"
         title="Кофейня в кадрах"
-        description="Снимки нашего зала, напитков и людей. Нажмите на фотографию, чтобы открыть её крупнее."
+        description="Фактуры стен, большие окна, общие столы и уголки для двоих. Рассмотрите пространство и выберите место под своё настроение."
       />
 
       <section className="bg-background py-14 sm:py-20">
@@ -106,8 +107,9 @@ function GalleryPage() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => setOpenIndex(i)}
                   aria-label={`Открыть фото: ${item.alt}`}
-                  className="group block w-full overflow-hidden rounded-2xl bg-muted break-inside-avoid"
+                  className="group relative block w-full overflow-hidden rounded-2xl bg-muted break-inside-avoid"
                 >
+                  {item.needsReplacement && <PhotoReplacementBadge />}
                   <img
                     src={item.src}
                     alt={item.alt}
@@ -172,11 +174,14 @@ function GalleryPage() {
               className="max-h-[85dvh] max-w-4xl"
               onClick={(e) => e.stopPropagation()}
             >
+              <div className="relative">
+              {current.needsReplacement && <PhotoReplacementBadge />}
               <img
                 src={current.src}
                 alt={current.alt}
                 className="max-h-[75dvh] w-auto rounded-2xl object-contain"
               />
+              </div>
               <figcaption className="mt-4 text-center text-sm text-cream/60">
                 {current.alt}
               </figcaption>

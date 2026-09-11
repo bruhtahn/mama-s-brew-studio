@@ -1,18 +1,19 @@
+import { PhotoReplacementBadge } from "@/components/site/PhotoReplacementBadge";
 import { createFileRoute } from "@tanstack/react-router";
 import { Leaf, Handshake, Sparkles, Recycle } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaSection } from "@/components/site/CtaSection";
-import interior1 from "@/assets/interior-1.webp";
-import interior2 from "@/assets/interior-2.webp";
-import barista1 from "@/assets/barista-1.webp";
+import interior1 from "@/assets/official/about-2.jpg";
+import interior2 from "@/assets/official/about-3.jpg";
+import barista1 from "@/assets/official/about-6.jpg";
 import barista2 from "@/assets/barista-2.webp";
-import beans from "@/assets/beans.webp";
+import beans from "@/assets/official/about-11.jpg";
 
 const title = "О нас — Мама варит кофе";
 const description =
-  "История кофейни «Мама варит кофе»: философия кофе, команда бариста, ценности и путь от домашней кухни до Покровки, 8.";
+  "«Мама варит кофе» — сеть из Уфы, основанная в 2017 году. История, собственная обжарка, тренинг-центр и идея третьего места.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,54 +31,16 @@ export const Route = createFileRoute("/about")({
 });
 
 const timeline = [
-  {
-    year: "2016",
-    title: "Кухня на Чистых прудах",
-    text: "Всё началось с воскресных завтраков: мама варила кофе на турке для друзей, которые заходили без предупреждения.",
-  },
-  {
-    year: "2019",
-    title: "Первая стойка",
-    text: "Мы арендовали три квадратных метра в книжном магазине и поставили одну кофемашину. Очередь выстраивалась до улицы.",
-  },
-  {
-    year: "2021",
-    title: "Собственная обжарка",
-    text: "Купили ростер на 5 кг и начали обжаривать зерно сами. С этого момента мы точно знаем, что в каждой чашке.",
-  },
-  {
-    year: "2023",
-    title: "Покровка, 8",
-    text: "Открыли основной зал: большие окна, длинный общий стол и тихий угол для тех, кто пришёл с книгой.",
-  },
-  {
-    year: "2026",
-    title: "Школа бариста",
-    text: "Запустили открытые каппинги по четвергам и учим гостей заваривать альтернативу дома.",
-  },
+  { year: "2017", title: "Начало в Уфе", text: "Первая кофейня в Башкортостане. На старте команда работала с зерном разных обжарщиков и искала свой подход к кофе." },
+  { year: "Рост", title: "От кофейни к сети", text: "Появились новые точки, собственный обжарочный цех и тренинг-центр для бариста. Вместе с сетью выросла и команда, которая отвечает за продукт." },
+  { year: "2024", title: "Первая кофейня в Москве", text: "Открытие на Покровке перенесло уфимскую идею третьего места в столицу: кофейня и коворкинг в одном пространстве." },
 ];
 
 const values = [
-  {
-    icon: Leaf,
-    title: "Прозрачность",
-    text: "Мы знаем ферму, высоту и способ обработки каждого лота и рассказываем это на упаковке.",
-  },
-  {
-    icon: Handshake,
-    title: "Честная цена",
-    text: "Платим фермерам выше биржевой цены и не экономим на молоке и масле для выпечки.",
-  },
-  {
-    icon: Sparkles,
-    title: "Внимание к детали",
-    text: "Калибруем помол трижды в день и взвешиваем каждый шот — вкус не должен зависеть от смены.",
-  },
-  {
-    icon: Recycle,
-    title: "Меньше следа",
-    text: "Скидка со своей кружкой, компостируем жмых и отдаём его городским садам.",
-  },
+  { icon: Leaf, title: "Отбор зерна", text: "В обжарку идёт зерно с оценкой выше 84 баллов SCA." },
+  { icon: Sparkles, title: "Профиль обжарки", text: "Для эспрессо и фильтра разрабатываем разные профили." },
+  { icon: Recycle, title: "Проверка вкуса", text: "Регулярно сравниваем партии на каппингах — профессиональных дегустациях кофе." },
+  { icon: Handshake, title: "Обучение команды", text: "Собственный тренинг-центр помогает бариста развивать навыки и передавать опыт." },
 ];
 
 function AboutPage() {
@@ -85,8 +48,8 @@ function AboutPage() {
     <>
       <PageHero
         eyebrow="О нас"
-        title="Кофейня, которая выросла из домашней кухни"
-        description="Нам важно, чтобы человек, зашедший на пять минут, уходил чуть более отдохнувшим, чем пришёл."
+        title="Из Уфы — с местом для каждого"
+        description="Мы родом из Башкортостана. С 2017 года создаём кофейни, в которых есть место для общения, работы и времени наедине с собой."
       />
 
       <section className="bg-background py-20 sm:py-28">
@@ -95,7 +58,7 @@ function AboutPage() {
             <div className="grid grid-cols-2 gap-4">
               <img
                 src={interior1}
-                alt="Светлый зал кофейни на Покровке"
+                alt="Уголок кофейни с креслами и надписью Третье место"
                 loading="lazy"
                 decoding="async"
                 width={800}
@@ -104,7 +67,7 @@ function AboutPage() {
               />
               <img
                 src={interior2}
-                alt="Столик у окна с книгами и кофе"
+                alt="Кресло и растения в интерьере кофейни"
                 loading="lazy"
                 decoding="async"
                 width={800}
@@ -113,7 +76,7 @@ function AboutPage() {
               />
               <img
                 src={beans}
-                alt="Обжаренные зёрна спешелти кофе"
+                alt="Обжаренные кофейные зёрна крупным планом"
                 loading="lazy"
                 decoding="async"
                 width={800}
@@ -125,23 +88,22 @@ function AboutPage() {
           <div>
             <SectionHeading
               eyebrow="Философия"
-              title="Кофе — это про заботу, а не про скорость"
-              description="Мы не гонимся за десятью локациями и не ставим таймер на приготовление. Вместо этого мы учим команду слышать зерно: пробовать каждый лот вслепую, обсуждать помол и признавать, когда чашка получилась не такой, как задумано."
+              title="Что такое «третье место»"
+              description="Социолог Рэй Ольденбург называл третьим местом пространство за пределами дома и работы, где люди встречаются и чувствуют себя частью городской жизни. Эта идея лежит в основе наших кофеен."
             />
             <Reveal delay={0.15}>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                Название родилось само собой. Так гости в шутку называли нашу первую стойку: «пойдём
-                туда, где мама варит кофе». Мы оставили это имя, потому что оно точно описывает
-                ощущение, которое хочется дарить — тепло, знакомый вкус и уверенность, что о вас
-                позаботятся.
+                Нам хочется, чтобы у вас было знакомое место в городе, куда легко прийти без повода.
+                Можно заглянуть за кофе по дороге, провести встречу или остаться на рабочий день.
+                Вы сами выбираете, сколько времени провести здесь и чему его посвятить.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
                 {[
-                  ["10 лет", "варим кофе"],
-                  ["5 кг", "обжарка в неделю"],
-                  ["12 000", "гостей в год"],
+                  ["2017", "начало в Уфе"],
+                  ["100+ т", "обжаривает сеть в год"],
+                  ["2024", "выход в Москву"],
                 ].map(([value, label]) => (
                   <div key={label}>
                     <dt className="sr-only">{label}</dt>
@@ -163,7 +125,7 @@ function AboutPage() {
 
       <section className="bg-cream py-20 sm:py-28">
         <div className="container-x">
-          <SectionHeading eyebrow="История" title="Как мы дошли до Покровки" />
+          <SectionHeading eyebrow="История" title="Уфимские корни, новые города" />
           <ol className="mt-14 space-y-0">
             {timeline.map((item, i) => (
               <Reveal as="li" key={item.year} delay={(i % 3) * 0.05}>
@@ -187,10 +149,10 @@ function AboutPage() {
       <section className="bg-background py-20 sm:py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Миссия и ценности"
-            title="Делать город на одну чашку добрее"
+            eyebrow="От зерна до чашки"
+            title="За вкус отвечает целая команда"
             align="center"
-            description="Наша миссия проста: быть местом, куда приходят не только за кофе, но и за спокойными пятнадцатью минутами посреди дня."
+            description="Свой цех позволяет следить за кофе на каждом этапе: от выбора зелёного зерна до рецепта приготовления."
           />
           <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
@@ -210,13 +172,13 @@ function AboutPage() {
 
       <section className="bg-mist py-20 sm:py-28">
         <div className="container-x">
-          <SectionHeading eyebrow="Команда" title="Люди за стойкой" />
+          <SectionHeading eyebrow="Команда" title="Кто делает это место вашим" />
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
             <Reveal>
               <figure className="overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)]">
                 <img
                   src={barista1}
-                  alt="Артём, шеф-бариста кофейни"
+                  alt="Обжарщик проверяет кофе у ростера"
                   loading="lazy"
                   decoding="async"
                   width={800}
@@ -224,17 +186,18 @@ function AboutPage() {
                   className="aspect-4/3 w-full object-cover"
                 />
                 <figcaption className="p-7">
-                  <h3 className="font-display text-lg font-bold">Артём · шеф-бариста</h3>
+                  <h3 className="font-display text-lg font-bold">Бариста и обжарщики</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Отвечает за профили обжарки и рецептуру. Финалист московского чемпионата по
-                    завариванию, ведёт наши четверговые каппинги.
+                    Одни раскрывают вкус зерна в обжарке, другие готовят вашу чашку.
+                    Общий язык команды — дегустации, обучение и внимание к тому, что нравится гостю.
                   </p>
                 </figcaption>
               </figure>
             </Reveal>
             <Reveal delay={0.08}>
               <figure className="overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)]">
-                <img
+                <div className="relative">
+<img
                   src={barista2}
                   alt="Руки бариста готовят порцию эспрессо"
                   loading="lazy"
@@ -243,11 +206,13 @@ function AboutPage() {
                   height={800}
                   className="aspect-4/3 w-full object-cover"
                 />
+<PhotoReplacementBadge />
+</div>
                 <figcaption className="p-7">
-                  <h3 className="font-display text-lg font-bold">Смена утренних бариста</h3>
+                  <h3 className="font-display text-lg font-bold">Команда пространства</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Приходят к шести утра, чтобы к семи в чашке был идеальный эспрессо. Именно они
-                    помнят ваш заказ наизусть.
+                    За каждой кофейней стоят также архитекторы, дизайнеры и технологи.
+                    Их работа соединяет интерьер, сервис и еду в место, где удобно проводить время.
                   </p>
                 </figcaption>
               </figure>

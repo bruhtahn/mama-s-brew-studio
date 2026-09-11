@@ -6,13 +6,13 @@ import {
   DrinkOfMonth,
   FoodPromo,
   GalleryPreview,
-  Testimonials,
+  ThirdPlace,
 } from "@/components/home/Sections";
 import { CtaSection } from "@/components/site/CtaSection";
 
 const title = "Мама варит кофе — кофейня на Покровке, 8 в Москве";
 const description =
-  "Спешелти-кофейня «Мама варит кофе» на Покровке, 8. Свежая обжарка, авторские напитки, домашние десерты. Ежедневно 07:00–23:00.";
+  "Спешелти-кофейня «Мама варит кофе» на Покровке, 8. Башкирская сеть из Уфы: кофе собственной обжарки и место для встреч и работы. Ежедневно 07:00–23:00.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +38,7 @@ function Index() {
       <DrinkOfMonth />
       <FoodPromo />
       <GalleryPreview />
-      <Testimonials />
+      <ThirdPlace />
       <CtaSection />
     </>
   );

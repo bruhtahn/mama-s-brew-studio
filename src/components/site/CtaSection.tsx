@@ -3,7 +3,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
-export function CtaSection() {
+export function CtaSection({ showMenuLink = true }: { showMenuLink?: boolean }) {
   return (
     <section className="bg-background py-20 sm:py-28">
       <div className="container-x">
@@ -19,11 +19,11 @@ export function CtaSection() {
                 Заходите в гости
               </span>
               <h2 className="mt-5 text-4xl font-extrabold leading-[1.02] sm:text-5xl">
-                Одна чашка — и день становится теплее
+                Увидимся на Покровке
               </h2>
               <p className="mt-5 text-base leading-relaxed text-cream/65">
-                Мы на Покровке каждый день с 07:00 до 23:00. Забегайте за утренним эспрессо или
-                оставайтесь на весь вечер с фильтром и медовиком.
+                Зовите друзей или приходите сами. Мы открыты каждый день с 07:00 до 23:00 —
+                выбирайте удобное время и заглядывайте.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -35,13 +35,15 @@ export function CtaSection() {
                   <MapPin className="h-4 w-4" aria-hidden />
                   Построить маршрут
                 </a>
-                <Link
-                  to="/menu"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/25 px-7 py-4 text-sm font-semibold text-cream transition-colors hover:border-cream/60"
-                >
-                  Смотреть меню
-                  <ArrowUpRight className="h-4 w-4" aria-hidden />
-                </Link>
+                {showMenuLink && (
+                  <Link
+                    to="/menu"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/25 px-7 py-4 text-sm font-semibold text-cream transition-colors hover:border-cream/60"
+                  >
+                    Смотреть меню
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                )}
               </div>
             </div>
           </div>

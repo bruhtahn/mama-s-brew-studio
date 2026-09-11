@@ -1,3 +1,4 @@
+import { PhotoReplacementBadge } from "@/components/site/PhotoReplacementBadge";
 import { Link } from "@tanstack/react-router";
 import {
   Coffee,
@@ -5,12 +6,9 @@ import {
   Sofa,
   Wifi,
   HeartHandshake,
-  Dog,
-  Star,
+  Users,
   ArrowUpRight,
-  Quote,
   Clock,
-  Percent,
   Sandwich,
   CakeSlice,
 } from "lucide-react";
@@ -20,7 +18,7 @@ import { DrinkCard } from "@/components/site/DrinkCard";
 import { featured, totalMenuItems } from "@/lib/menu-data";
 import { galleryItems } from "@/lib/gallery-data";
 import drinkOfMonth from "@/assets/drink-of-month.webp";
-import promoFood from "@/assets/dessert-1.webp";
+import promoFood from "@/assets/menu-source/food-11.webp";
 
 /** Остаток позиций меню, округлённый до десятков — для плитки «Меню целиком». */
 const moreInMenu = Math.floor((totalMenuItems - featured.length) / 10) * 10;
@@ -31,7 +29,7 @@ export function FeaturedCoffee() {
       <div className="container-x">
         <SectionHeading
           eyebrow="Наше меню"
-          title="Выбор гостей"
+          title="С чего начнём?"
           description="Понемногу из каждого раздела: классический капучино и альтернатива на V60, матча-латте, облепиховый чай, сэндвичи, свежая выпечка и снеки."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -62,36 +60,12 @@ export function FeaturedCoffee() {
 }
 
 const advantages = [
-  {
-    icon: Coffee,
-    title: "Спешелти-кофе",
-    text: "Зерно с оценкой 84+ баллов от проверенных ферм Эфиопии, Кении и Колумбии.",
-  },
-  {
-    icon: Flame,
-    title: "Свежая обжарка",
-    text: "Обжариваем небольшими партиями и пускаем в работу в течение двух недель.",
-  },
-  {
-    icon: Sofa,
-    title: "Уютный интерьер",
-    text: "Тёплое дерево, мягкий свет и большие окна с видом на Покровку.",
-  },
-  {
-    icon: Wifi,
-    title: "Бесплатный Wi-Fi",
-    text: "Быстрый интернет и розетки у каждого столика — работайте сколько нужно.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Дружелюбная команда",
-    text: "Расскажем про сорт, подберём напиток по вкусу и запомним ваш заказ.",
-  },
-  {
-    icon: Dog,
-    title: "Можно с собакой",
-    text: "Питомцы — желанные гости. Миска с водой и угощение всегда наготове.",
-  },
+  { icon: Coffee, title: "Зерно выше 84 баллов", text: "Отбираем спешелти-зерно по системе SCA. За оценкой стоят аромат, чистота и вкус будущей чашки." },
+  { icon: Flame, title: "Свой обжарочный цех", text: "Создаём отдельные профили для эспрессо и фильтра — под каждый способ раскрываем зерно по-своему." },
+  { icon: HeartHandshake, title: "Выбор без экзамена", text: "Расскажите, что любите: плотный шоколадный вкус или лёгкую фруктовую кислинку. С кофейными терминами разберёмся вместе." },
+  { icon: Sofa, title: "Пространство с характером", text: "Открытые фактуры, индустриальные детали и мебель mid century. Можно устроиться за общим столом или выбрать уголок для двоих." },
+  { icon: Wifi, title: "Место для рабочего дня", text: "Приходите с ноутбуком и своими задачами. Формат кофейни-коворкинга позволяет задержаться дольше одного перерыва." },
+  { icon: Users, title: "Можно прийти одному", text: "Компания и особый повод необязательны. Книга, собственные мысли и чашка кофе — тоже хороший план." },
 ];
 
 export function WhyUs() {
@@ -100,7 +74,7 @@ export function WhyUs() {
       <div className="container-x">
         <SectionHeading
           eyebrow="Почему к нам возвращаются"
-          title="Мелочи, из которых складывается утро"
+          title="Хороший кофе. И место для вас."
           align="center"
         />
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -128,6 +102,7 @@ export function DrinkOfMonth() {
         <Reveal>
           <div className="grid overflow-hidden rounded-[2rem] bg-espresso text-cream lg:grid-cols-2">
             <div className="relative min-h-72 overflow-hidden">
+              <PhotoReplacementBadge />
               <img
                 src={drinkOfMonth}
                 alt="Кленовый латте с корицей и бадьяном"
@@ -197,14 +172,11 @@ export function FoodPromo() {
             <div className="relative">
               <img
                 src={promoFood}
-                alt="Десерты и выпечка собственного производства"
+                alt="Круассан с Нутеллой"
                 loading="lazy"
                 decoding="async"
                 className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[var(--shadow-lift)]"
               />
-              <span className="absolute -bottom-5 left-6 rounded-2xl bg-primary px-5 py-3 font-display text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)]">
-                −30% на всю еду
-              </span>
             </div>
           </Reveal>
           <div>
@@ -256,7 +228,7 @@ export function GalleryPreview() {
     <section className="bg-background py-20 sm:py-28">
       <div className="container-x">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading eyebrow="Галерея" title="Как у нас по утрам" />
+          <SectionHeading eyebrow="Галерея" title="Посмотрите, где устроиться" />
           <Reveal delay={0.1}>
             <Link
               to="/gallery"
@@ -277,7 +249,8 @@ export function GalleryPreview() {
               delay={(i % 3) * 0.06}
               className={i === 0 ? "col-span-2 lg:col-span-1 lg:row-span-2" : ""}
             >
-              <div className="h-full overflow-hidden rounded-2xl bg-muted">
+              <div className="relative h-full overflow-hidden rounded-2xl bg-muted">
+                {item.needsReplacement && <PhotoReplacementBadge />}
                 <img
                   src={item.src}
                   alt={item.alt}
@@ -294,65 +267,25 @@ export function GalleryPreview() {
   );
 }
 
-const testimonials = [
-  {
-    name: "Ольга Ветрова",
-    role: "Заходит по утрам",
-    rating: 5,
-    text: "Лучший раф в районе, и это не преувеличение. Ребята помнят, что я беру без сахара, и всегда спрашивают, как дела. Ощущение, будто заходишь к друзьям.",
-    initials: "ОВ",
-  },
-  {
-    name: "Дмитрий Козлов",
-    role: "Работает из кофейни",
-    rating: 5,
-    text: "Провёл здесь половину своего проекта: тихо, розетки у каждого стола, Wi-Fi не падает. Фильтр на Кении — отдельная причина возвращаться.",
-    initials: "ДК",
-  },
-  {
-    name: "Марина Лебедева",
-    role: "Приходит с Тошей",
-    rating: 5,
-    text: "Единственное место поблизости, куда можно с собакой без вопросов. Тоше выносят воду, мне — медовик. Идеальная суббота.",
-    initials: "МЛ",
-  },
+const visitIdeas = [
+  { title: "Поработать вне дома", label: "Ноутбук и чашка кофе", text: "Сменить обстановку, собрать мысли и закончить задачу. Между делами можно отвлечься на обед, а потом вернуться к своему проекту." },
+  { title: "Увидеться вживую", label: "Встреча вместо переписки", text: "Позвать друга, с которым давно не совпадали расписания. Заказать кофе, разделить десерт и наконец рассказать всё, что не помещается в сообщения." },
+  { title: "Побыть с собой", label: "Время без планов", text: "Открыть книгу или просто смотреть в окно. Здесь можно провести паузу между делами так, как хочется именно вам." },
 ];
 
-export function Testimonials() {
+export function ThirdPlace() {
   return (
     <section className="bg-mist py-20 sm:py-28">
       <div className="container-x">
-        <SectionHeading eyebrow="Отзывы" title="Что говорят гости" align="center" />
+        <SectionHeading eyebrow="Ваше третье место" title="Между домом и работой" description="У каждого дня свой ритм. Выберите, каким будет ваше время здесь." align="center" />
         <ul className="mt-14 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal as="li" key={t.name} delay={i * 0.08}>
-              <figure className="flex h-full flex-col rounded-3xl border border-border/60 bg-card p-7 shadow-[var(--shadow-soft)]">
-                <Quote className="h-7 w-7 text-primary/25" aria-hidden />
-                <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-foreground/85">
-                  {t.text}
-                </blockquote>
-                <div
-                  className="mt-6 flex gap-1"
-                  aria-label={`Оценка ${t.rating} из 5`}
-                  role="img"
-                >
-                  {Array.from({ length: t.rating }).map((_, s) => (
-                    <Star key={s} className="h-4 w-4 fill-primary text-primary" aria-hidden />
-                  ))}
-                </div>
-                <figcaption className="mt-5 flex items-center gap-3 border-t border-border pt-5">
-                  <span
-                    aria-hidden
-                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-coffee text-sm font-bold text-secondary-foreground"
-                  >
-                    {t.initials}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block truncate font-display text-sm font-bold">{t.name}</span>
-                    <span className="block truncate text-xs text-muted-foreground">{t.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
+          {visitIdeas.map((item, i) => (
+            <Reveal as="li" key={item.title} delay={i * 0.08}>
+              <article className="flex h-full flex-col rounded-3xl border border-border/60 bg-card p-7 shadow-[var(--shadow-soft)]">
+                <span className="text-sm font-semibold text-primary">{item.label}</span>
+                <h3 className="mt-5 font-display text-xl font-bold">{item.title}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{item.text}</p>
+              </article>
             </Reveal>
           ))}
         </ul>

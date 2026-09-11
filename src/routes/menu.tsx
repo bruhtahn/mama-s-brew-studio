@@ -64,8 +64,8 @@ function MenuPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Цены указаны за стандартную порцию. Растительное молоко — без доплаты, зерно на
-              альтернативу меняем каждые две недели.
+              Классика на эспрессо, фильтр и альтернативные способы заваривания.
+              К чашке можно выбрать сэндвич или десерт, а бариста поможет определиться с напитком.
             </p>
           </Reveal>
         </div>
@@ -120,7 +120,7 @@ function MenuPage() {
         </div>
       </section>
 
-      <CtaSection />
+      <CtaSection showMenuLink={false} />
     </>
   );
 }

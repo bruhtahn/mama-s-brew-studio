@@ -26,7 +26,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/60">
-              {SITE.tagline} Спешелти-зерно, свежая обжарка и тёплый зал на Покровке.
+              Мама варит кофе — башкирская сеть кофеен. Начали в Уфе в 2017 году, теперь встречаемся и в Москве.
             </p>
             <div className="mt-6 flex gap-3">
               <a
